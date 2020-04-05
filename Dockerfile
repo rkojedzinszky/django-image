@@ -1,4 +1,4 @@
-FROM alpine:3.11.3
+FROM alpine:3.11.5
 
 LABEL maintainer="Richard Kojedzinszky"
 LABEL org="Euronet Zrt"
