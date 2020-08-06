@@ -4,15 +4,11 @@ LABEL maintainer="Richard Kojedzinszky"
 LABEL org="Euronet Zrt"
 
 # Install python3 and frequent packages
-RUN apk add --no-cache tzdata py3-pip py3-psycopg2 libstdc++ && \
+RUN apk add --no-cache tzdata py3-pip py3-psycopg2 py3-grpcio py3-protobuf && \
     ln -sf python3 /usr/bin/python && ln -sf pip3 /usr/bin/pip && \
-    apk add --no-cache -t .build-deps python3-dev gcc g++ make libffi-dev && \
-    pip install -U \
-        --no-binary grpcio,protobuf grpcio protobuf \
+    pip install --no-cache -U \
         'django<2.3' \
 	django-atomic-migrations \
 	django-dbconn-retry \
 	django-tastypie && \
-    (find /usr/lib -name '*.so' -print0 | xargs -r0 strip -s) && \
-    apk del .build-deps && \
     rm -rf /root/.cache
