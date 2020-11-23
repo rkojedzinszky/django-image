@@ -7,10 +7,11 @@ platform:
 
 steps:
 - name: docker
-  image: plugins/docker
+  image: plugins/docker:19
   settings:
-    repo: euronetzrt/django
+    repo: ghcr.io/euronetzrt/django
+    registry: ghcr.io
     username: rkojedzinszky
     password:
-      from_secret: hub_docker_password
+      from_secret: ghcr.io.password
     auto_tag: true
