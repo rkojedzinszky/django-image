@@ -1,7 +1,7 @@
 FROM alpine:3.12.0
 
-LABEL maintainer="Richard Kojedzinszky"
-LABEL org="Euronet Zrt"
+LABEL org.opencontainers.image.authors "Richard Kojedzinszky <richard@kojedz.in>"
+LABEL org.opencontainers.image.source https://github.com/euronetzrt/django
 
 # Install python3 and frequent packages
 RUN apk add --no-cache tzdata py3-pip py3-psycopg2 py3-grpcio py3-protobuf && \
