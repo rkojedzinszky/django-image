@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.source https://github.com/euronetzrt/django
 RUN apk add --no-cache tzdata py3-pip py3-psycopg2 py3-grpcio py3-protobuf && \
     ln -sf python3 /usr/bin/python && ln -sf pip3 /usr/bin/pip && \
     pip install --no-cache -U \
-        'django<2.3' \
+        'django<3.3' \
          django-atomic-migrations \
          django-dbconn-retry \
          django-tastypie && \
