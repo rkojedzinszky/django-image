@@ -1,12 +1,12 @@
-FROM alpine:3.15.4
+FROM alpine:3.16.2
 
 LABEL org.opencontainers.image.authors "Richard Kojedzinszky <richard@kojedz.in>"
 LABEL org.opencontainers.image.source https://github.com/rkojedzinszky/django-image
 
 # Install python3 and frequent packages
 RUN apk add --no-cache tzdata py3-pip \
-        py3-tz py3-asgiref py3-sqlparse py3-greenlet py3-mimeparse py3-dateutil \
-        py3-psycopg2 py3-grpcio py3-protobuf py3-paho-mqtt py3-sqlalchemy && \
+    py3-tz py3-asgiref py3-sqlparse py3-greenlet py3-mimeparse py3-dateutil \
+    py3-psycopg2 py3-grpcio py3-protobuf py3-paho-mqtt py3-sqlalchemy && \
     ln -sf python3 /usr/bin/python && ln -sf pip3 /usr/bin/pip && \
     pip install --no-cache -U \
     'django<3.3' \
